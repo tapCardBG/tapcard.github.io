@@ -47,7 +47,7 @@
       setTimeout(function() {
         popup.style.display = 'none';
         window.location.href = redirectUrl;
-      }, 1200); // 2000 milliseconds = 2 seconds
+      }, 1500); // 2000 milliseconds = 2 seconds
     }
 
     // Check if there's a query parameter named 'id' in the URL
@@ -65,7 +65,7 @@
 
     if (id !== null && id in redirects) {
       // If 'id' query parameter exists and is valid, show the popup and redirect after 2 seconds
-      showPopup('image.png', redirects[id]);
+      showPopup('image.webp', redirects[id]);
     } else {
       // If 'id' query parameter doesn't exist or is not valid, redirect immediately
       window.location.href = 'https://www.tapcard.bg'; // Default redirect
