@@ -22,7 +22,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 9999;
-      animation: fadeInOut 3s forwards; /* Apply fade-in and fade-out animation */
+      animation: fadeInOut 2.7s forwards; /* Apply fade-in and fade-out animation */
     }
     .popup img {
       max-width: 100%;
@@ -38,7 +38,7 @@
         opacity: 0; /* Start with opacity 0 (fully transparent) */
       }
       10%, 90% {
-        opacity: 2; /* Fade in and out quickly */
+        opacity: 2.7; /* Fade in and out quickly */
       }
       100% {
         opacity: 0; /* End with opacity 0 (fully transparent) */
@@ -61,7 +61,7 @@
       setTimeout(function() {
         popup.style.display = 'none';
         window.location.href = redirectUrl;
-      }, 5000); // 2000 milliseconds = 2 seconds
+      }, 3000); // 2000 milliseconds = 2 seconds
     }
 
     // Check if there's a query parameter named 'id' in the URL
