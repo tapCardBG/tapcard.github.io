@@ -12,7 +12,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #ffffff;
+      background-color: #f0f0f0;
       font-family: Arial, sans-serif;
     }
     .popup {
@@ -22,6 +22,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 9999;
+      animation: fadeInOut 2s forwards; /* Apply fade-in and fade-out animation */
     }
     .popup img {
       max-width: 100%;
@@ -29,6 +30,19 @@
       width: auto;
       height: auto;
       border: none; /* Remove border */
+    }
+
+    /* Define fade-in and fade-out animation */
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0; /* Start with opacity 0 (fully transparent) */
+      }
+      10%, 90% {
+        opacity: 1; /* Fade in and out quickly */
+      }
+      100% {
+        opacity: 0; /* End with opacity 0 (fully transparent) */
+      }
     }
   </style>
 </head>
