@@ -57,7 +57,7 @@
     // Define different redirects based on 'id'
     var redirects = {
       '1': 'https://www.google.com',
-      '2': 'https://www.example.com',
+      '2': 'https://search.google.com/local/writereview?placeid=ChIJsXEXneNTpEARGAjt_p5BzTw',
       '3': 'https://www.anotherexample.com',
       '4': 'https://www.yetanotherexample.com',
       '5': 'https://www.finaldestination.com'
@@ -65,7 +65,7 @@
 
     if (id !== null && id in redirects) {
       // If 'id' query parameter exists and is valid, show the popup and redirect after 2 seconds
-      showPopup('logo_inverse.png', redirects[id]);
+      showPopup('image.png', redirects[id]);
     } else {
       // If 'id' query parameter doesn't exist or is not valid, redirect immediately
       window.location.href = 'https://www.google.com'; // Default redirect
