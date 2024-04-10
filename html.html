@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAP Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .popup {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup" id="popup">
+    <p>Powered by tapCard</p>
+  </div>
+
+  <script>
+    // Function to show the popup for 2 seconds
+    function showPopup() {
+      var popup = document.getElementById('popup');
+      popup.style.display = 'block';
+      setTimeout(function() {
+        popup.style.display = 'none';
+        window.location.href = 'https://www.google.com';
+      }, 2000); // 2000 milliseconds = 2 seconds
+    }
+
+    // Check if the URL contains a number after /1, /2, etc.
+    var url = window.location.href;
+    var match = url.match(/\/(\d+)$/);
+    if (match && match[1]) {
+      // If there's a number, show the popup and redirect after 2 seconds
+      showPopup();
+    } else {
+      // If there's no number, redirect immediately
+      window.location.href = 'https://www.google.com';
+    }
+  </script>
+</body>
+</html>
