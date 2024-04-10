@@ -45,14 +45,14 @@
       }, 2000); // 2000 milliseconds = 2 seconds
     }
 
-    // Check if the URL contains a number after /1, /2, etc.
-    var url = window.location.href;
-    var match = url.match(/\/(\d+)$/);
-    if (match) {
-      // If there's a number, show the popup and redirect after 2 seconds
+    // Check if there's a query parameter named 'id' in the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var id = urlParams.get('id');
+    if (id !== null && !isNaN(parseInt(id))) {
+      // If 'id' query parameter exists and is a number, show the popup and redirect after 2 seconds
       showPopup();
     } else {
-      // If there's no number, redirect immediately
+      // If 'id' query parameter doesn't exist or is not a number, redirect immediately
       window.location.href = 'https://www.google.com';
     }
   </script>
