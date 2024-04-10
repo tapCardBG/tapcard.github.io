@@ -48,7 +48,7 @@
     // Check if the URL contains a number after /1, /2, etc.
     var url = window.location.href;
     var match = url.match(/\/(\d+)$/);
-    if (match && match[1]) {
+    if (match) {
       // If there's a number, show the popup and redirect after 2 seconds
       showPopup();
     } else {
