@@ -65,7 +65,7 @@
 
     if (id !== null && id in redirects) {
       // If 'id' query parameter exists and is valid, show the popup and redirect after 2 seconds
-      showPopup('image.png', redirects[id]);
+      showPopup('logo_inverse.png', redirects[id]);
     } else {
       // If 'id' query parameter doesn't exist or is not valid, redirect immediately
       window.location.href = 'https://www.google.com'; // Default redirect
