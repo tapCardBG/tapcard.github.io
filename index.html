@@ -21,39 +21,53 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px;
+      z-index: 9999;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      z-index: 9999;
     }
   </style>
 </head>
 <body>
   <div class="popup" id="popup">
-    <p>Powered by tapCard</p>
+    <img id="popupImage" src="" alt="Powered by tapCard">
   </div>
 
   <script>
-    // Function to show the popup for 2 seconds
-    function showPopup() {
+    // Function to show the popup for 2 seconds and redirect
+    function showPopup(imageSrc, redirectUrl) {
       var popup = document.getElementById('popup');
+      var popupImage = document.getElementById('popupImage');
+      popupImage.src = imageSrc;
       popup.style.display = 'block';
       setTimeout(function() {
         popup.style.display = 'none';
-        window.location.href = 'https://www.google.com';
+        window.location.href = redirectUrl;
       }, 2000); // 2000 milliseconds = 2 seconds
     }
 
     // Check if there's a query parameter named 'id' in the URL
     var urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('id');
-    if (id !== null && !isNaN(parseInt(id))) {
-      // If 'id' query parameter exists and is a number, show the popup and redirect after 2 seconds
-      showPopup();
+    
+    // Define different redirects based on 'id'
+    var redirects = {
+      '1': 'https://www.google.com',
+      '2': 'https://www.example.com',
+      '3': 'https://www.anotherexample.com',
+      '4': 'https://www.yetanotherexample.com',
+      '5': 'https://www.finaldestination.com'
+    };
+
+    if (id !== null && id in redirects) {
+      // If 'id' query parameter exists and is valid, show the popup and redirect after 2 seconds
+      showPopup('logo_inverse.png', redirects[id]);
     } else {
-      // If 'id' query parameter doesn't exist or is not a number, redirect immediately
-      window.location.href = 'https://www.google.com';
+      // If 'id' query parameter doesn't exist or is not valid, redirect immediately
+      window.location.href = 'https://www.google.com'; // Default redirect
     }
   </script>
 </body>
